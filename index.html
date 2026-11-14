@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fyndora Scented Candles</title>
+<meta name="description" content="Eight soy-wax scented candles in hand-painted metal tins. A gift that feels thought‑of. Cash on delivery across Bangladesh.">
+<meta property="og:title" content="Fyndora: scented candles made for gifting">
+<meta property="og:description" content="Eight scents in hand-painted metal tins, ৳540 each. Cash on delivery.">
+<meta property="og:image" content="assets/img/hero.webp">
+<meta name="theme-color" content="#8C4028">
+<link rel="icon" href="assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Lora:wght@500;600;700&family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=8">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav__in">
+    <a class="brand" href="#top" aria-label="Fyndora home">
+      <img src="assets/img/logo.png" alt="" width="30" height="32">
+      <span>Fyndora</span>
+    </a>
+    <nav class="nav__links" aria-label="Main">
+      <a href="#collection" data-i18n="nav.collection">Collection</a>
+      <a href="#gift" data-i18n="nav.gift">Gifting</a>
+      <a href="#details" data-i18n="nav.details">Details</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="bn" aria-pressed="false">বাংলা</button>
+    </div>
+    <button class="cart-btn" type="button" id="openCart" aria-label="Open cart">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" aria-hidden="true"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8L5 8Z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
+      <span class="label" data-i18n="nav.cart">Cart</span>
+      <span class="count" id="cartCount">0</span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero__grid">
+      <div>
+        <h1 class="kinetic" data-i18n="hero.title">A gift that feels thought‑of.</h1>
+        <p class="hero__lead" data-i18n="hero.lead">Eight soy-wax scents in hand-painted tins, delivered to their door.</p>
+        <div class="price">
+          <span class="price__now" data-money="540">৳540</span>
+          <span class="price__was" data-money="590">৳590</span>
+          <span class="price__note" data-i18n="hero.each">each</span>
+        </div>
+        <div class="hero__actions">
+          <a class="btn" href="#collection" data-i18n="hero.cta">Choose a scent</a>
+          <a class="btn btn--ghost" href="https://wa.me/8801314624969" target="_blank" rel="noopener" data-i18n="hero.wa">Ask on WhatsApp</a>
+        </div>
+      </div>
+      <div class="stage">
+        <div class="spot" id="tilt">
+          <div class="spot__in">
+            <img src="assets/img/hero.webp" alt="Fyndora candle tins in paisley prints beside their gift box and a pink flower, one candle lit" width="1600" height="1600" fetchpriority="high">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--paper" id="collection">
+    <div class="wrap head reveal">
+      <h2 data-i18n="col.title">Eight scents, ৳540 each</h2>
+    </div>
+    <div class="marquee" id="marquee" aria-label="Candle collection">
+      <div class="track" id="track">
+        <!-- cards: data-id matches PRODUCTS in app.js -->
+        <article class="card card--combo" data-id="combo-a">
+          <div class="card__img"><img src="assets/img/combo-a.webp" alt="Combo A: Lemon, Tea, Jasmine and Vanilla tins with their gift box" width="1000" height="1000" loading="lazy"><span class="badge" data-i18n="combo.badge">Set of 4</span></div>
+          <div class="card__body"><h3 data-i18n="p.comboa">Combo A</h3><p class="card__note" data-i18n="n.comboa">Lemon, Tea, Jasmine and Vanilla</p>
+            <div class="card__row"><span class="card__price"><span data-money="2100">৳2,100</span><s data-money="2360">৳2,360</s></span><button class="btn btn--small add" type="button" data-i18n="add">Add to cart</button></div></div>
+        </article>
+        <article class="card card--combo" data-id="combo-b">
+          <div class="card__img"><img src="assets/img/combo-b.webp" alt="Combo B: Lemon, Rose, Mint and Lavender tins with their gift box" width="1000" height="1000" loading="lazy"><span class="badge" data-i18n="combo.badge">Set of 4</span></div>
+          <div class="card__body"><h3 data-i18n="p.combob">Combo B</h3><p class="card__note" data-i18n="n.combob">Lemon, Rose, Mint and Lavender</p>
+            <div class="card__row"><span class="card__price"><span data-money="2100">৳2,100</span><s data-money="2360">৳2,360</s></span><button class="btn btn--small add" type="button" data-i18n="add">Add to cart</button></div></div>
+        </article>
+        <article class="card" data-id="jasmine">
+          <div class="card__img"><img src="assets/img/jasmine.webp" alt="Jasmine candle tin with its box" width="900" height="900" loading="lazy"></div>
+          <div class="card__body"><h3 data-i18n="p.jasmine">Jasmine</h3><p class="card__note" data-i18n="n.jasmine">Soft white florals for slow evenings</p>
+            <div class="card__row"><span class="card__price"><span data-money="540">৳540</span><s data-money="590">৳590</s></span><button class="btn btn--small add" type="button" data-i18n="add">Add to cart</button></div></div>
+        </article>
+        <article class="card" data-id="lavender">
+          <div class="card__img"><img src="assets/img/lavender.webp" alt="Lavender candle tin with its box" width="900" height="900" loading="lazy"></div>
+          <div class="card__body"><h3 data-i18n="p.lavender">Lavender</h3><p class="card__note" data-i18n="n.lavender">Calm and herbal, made for winding down</p>
+            <div class="card__row"><span class="card__price"><span data-money="540">৳540</span><s data-money="590">৳590</s></span><button class="btn btn--small add" type="button" data-i18n="add">Add to cart</button></div></div>
+        </article>
+        <article class="card" data-id="lemon-floral">
+          <div class="card__img"><img src="assets/img/lemon-floral.webp" alt="Lemon candle in a floral tin with its box" width="900" height="900" loading="lazy"></div>
+          <div class="card__body"><h3 data-i18n="p.lemonf">Lemon, floral tin</h3><p class="card__note" data-i18n="n.lemon">Bright and fresh, like an open window</p>
+            <div class="card__row"><span class="card__price"><span data-money="540">৳540</span><s data-money="590">৳590</s></span><button class="btn btn--small add" type="button" data-i18n="add">Add to cart</button></div></div>
+        </article>
+        <article class="card" data-id="lemon-paisley">
+          <div class="card__img"><img src="assets/img/lemon-paisley.webp" alt="Lemon candle in a paisley tin with its box" width="900" height="900" loading="lazy"></div>
+          <div class="card__body"><h3 data-i18n="p.lemonp">Lemon, paisley tin</h3><p class="card__note" data-i18n="n.lemonp">The same lemon, in a plum paisley tin</p>
+            <div class="card__row"><span class="card__price"><span data-money="540">৳540</span><s data-money="590">৳590</s></span><button class="btn btn--small add" type="button" data-i18n="add">Add to cart</button></div></div>
+        </article>
+        <article class="card" data-id="mint">
+          <div class="card__img"><img src="assets/img/mint.webp" alt="Mint candle tin with its box" width="900" height="900" loading="lazy"></div>
+          <div class="card__body"><h3 data-i18n="p.mint">Mint</h3><p class="card__note" data-i18n="n.mint">Cool and clean for a desk or study</p>
+            <div class="card__row"><span class="card__price"><span data-money="540">৳540</span><s data-money="590">৳590</s></span><button class="btn btn--small add" type="button" data-i18n="add">Add to cart</button></div></div>
+        </article>
+        <article class="card" data-id="rose">
+          <div class="card__img"><img src="assets/img/rose.webp" alt="Rose candle tin with its box" width="900" height="900" loading="lazy"></div>
+          <div class="card__body"><h3 data-i18n="p.rose">Rose</h3><p class="card__note" data-i18n="n.rose">The classic, for someone you love</p>
+            <div class="card__row"><span class="card__price"><span data-money="540">৳540</span><s data-money="590">৳590</s></span><button class="btn btn--small add" type="button" data-i18n="add">Add to cart</button></div></div>
+        </article>
+        <article class="card" data-id="tea">
+          <div class="card__img"><img src="assets/img/tea.webp" alt="Tea candle in a pink paisley tin with its box" width="900" height="900" loading="lazy"></div>
+          <div class="card__body"><h3 data-i18n="p.tea">Tea</h3><p class="card__note" data-i18n="n.tea">Warm and quiet, like the first cup</p>
+            <div class="card__row"><span class="card__price"><span data-money="540">৳540</span><s data-money="590">৳590</s></span><button class="btn btn--small add" type="button" data-i18n="add">Add to cart</button></div></div>
+        </article>
+        <article class="card" data-id="vanilla">
+          <div class="card__img"><img src="assets/img/vanilla.webp" alt="Vanilla candle in a blue paisley tin with its box" width="900" height="900" loading="lazy"></div>
+          <div class="card__body"><h3 data-i18n="p.vanilla">Vanilla</h3><p class="card__note" data-i18n="n.vanilla">Sweet and cosy, the easy favourite</p>
+            <div class="card__row"><span class="card__price"><span data-money="540">৳540</span><s data-money="590">৳590</s></span><button class="btn btn--small add" type="button" data-i18n="add">Add to cart</button></div></div>
+        </article>
+      </div>
+    </div>
+    <p class="marquee__hint wrap" data-i18n="col.lead">Touch or hover over the line to pause it. Delivery is charged once per order, however many you add.</p>
+  </section>
+
+  <section class="section" id="gift">
+    <div class="wrap gift">
+      <div class="gift__img reveal"><img src="assets/img/gift-roses.webp" alt="Two candle tins on a gift box beside a bunch of pink roses" width="1200" height="1200" loading="lazy"></div>
+      <div class="reveal">
+        <h2 data-i18n="gift.title">Made to be given</h2>
+        <ul class="gift__list">
+          <li><span class="n" data-num="1">1</span><div><strong data-i18n="gift.1t">It arrives already boxed</strong><span data-i18n="gift.1">Every tin comes in its own printed box, ready to hand over.</span></div></li>
+          <li><span class="n" data-num="2">2</span><div><strong data-i18n="gift.2t">The tin stays after the wax</strong><span data-i18n="gift.2">A painted metal jar they keep for rings, pins or sweets.</span></div></li>
+          <li><span class="n" data-num="3">3</span><div><strong data-i18n="gift.3t">A set of four, ready to give</strong><span data-i18n="gift.3">Two combos of four scents each, for a gift that feels generous.</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--paper" id="details">
+    <div class="wrap facts">
+      <div class="reveal">
+        <h2 data-i18n="det.title">Know it before you order</h2>
+        <p class="facts__lead" data-i18n="det.lead">Two things we always say first: the candle is small, and the scent is gentle. That honesty is why nobody has sent one back.</p>
+        <div class="record">
+          <div><b data-num="100">100+</b><span data-i18n="det.orders">orders delivered</span></div>
+          <div><b data-num="0">0</b><span data-i18n="det.returns">returns so far</span></div>
+        </div>
+      </div>
+      <table class="spec reveal">
+        <tbody>
+          <tr class="flag"><th data-i18n="s.size">Candle size</th><td data-i18n="s.sizev">6.9 cm wide, 7.7 cm tall</td></tr>
+          <tr class="flag"><th data-i18n="s.scent">Fragrance</th><td data-i18n="s.scentv">Moderate, a soft room scent</td></tr>
+          <tr><th data-i18n="s.box">Box size</th><td data-i18n="s.boxv">7.2 × 8 cm</td></tr>
+          <tr><th data-i18n="s.wax">Wax</th><td data-i18n="s.waxv">Soy wax, 4 oz (113 g)</td></tr>
+          <tr><th data-i18n="s.weight">Weight with box</th><td data-i18n="s.weightv">150 g</td></tr>
+          <tr><th data-i18n="s.burn">Burn time</th><td data-i18n="s.burnv">At least 16 hours</td></tr>
+          <tr><th data-i18n="s.tin">Container</th><td data-i18n="s.tinv">Metal tin jar with lid</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="panel panel--wide reveal">
+        <div>
+        <h3 data-i18n="ret.title">Three days to change your mind</h3>
+        <ul>
+          <li data-i18n="ret.1">Return within 3 days of receiving it, no reason needed.</li>
+          <li data-i18n="ret.2">We arrange pickup from your address.</li>
+          <li data-i18n="ret.3">The return delivery charge is deducted from your refund.</li>
+          <li data-i18n="ret.4">You can also check it in front of the rider and return it by paying only the delivery charge.</li>
+        </ul>
+        </div>
+        <div class="condition" role="note">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" aria-hidden="true"><path d="M12 3 2.8 19.5h18.4L12 3Z"/><path d="M12 10v4.5"/><circle cx="12" cy="17" r="0.6"/></svg>
+          <div><strong data-i18n="cond.t">Condition for every return</strong><span data-i18n="cond">The candle must be unburned and unused, in resellable condition. A lit or used candle cannot be returned.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--paper" id="faq">
+    <div class="wrap">
+      <div class="head reveal"><h2 data-i18n="faq.title">Questions we hear most</h2></div>
+      <div class="faq reveal">
+        <details><summary data-i18n="q1">What is the tin made of?</summary><p data-i18n="a1">Metal. It is a painted tin jar with a lid, so it stays useful after the candle is finished.</p></details>
+        <details><summary data-i18n="q2">How long does it burn?</summary><p data-i18n="a2">At least 16 hours. Let the top melt evenly to the edge on the first burn so the candle does not tunnel.</p></details>
+        <details><summary data-i18n="q3">How big is it, and how heavy?</summary><p data-i18n="a3">The candle is 6.9 cm wide and 7.7 cm tall; the box is 7.2 × 8 cm. It holds 113 g of soy wax and weighs 150 g with the box. It is a small candle, best for a bedside, desk or a gift.</p></details>
+        <details><summary data-i18n="q4">How strong is the fragrance?</summary><p data-i18n="a4">Moderate. It gives a soft scent to a small room rather than filling a large hall. If you want a strong scent, this may not be the one for you.</p></details>
+        <details><summary data-i18n="q5">Why is delivery ৳120?</summary><p data-i18n="a5">Our stock is in Lakshmipur, so every parcel travels by Steadfast courier from there. Inside Lakshmipur it is ৳60; everywhere else, Dhaka included, it is ৳120.</p></details>
+        <details><summary data-i18n="q6">How do I pay, and when will it arrive?</summary><p data-i18n="a6">Cash on delivery only, so you pay when it reaches you. It takes 2 to 5 days.</p></details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <a class="brand" href="#top"><span>Fyndora</span></a>
+        <p data-i18n="foot.about">Thoughtful gifts and small luxuries, sent from Lakshmipur to anywhere in Bangladesh.</p>
+      </div>
+      <div>
+        <h3 class="fh" data-i18n="foot.talk">Talk to us</h3>
+        <a class="social" href="https://wa.me/8801314624969" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 14.98L2 22l5.17-1.5A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.07.9.9-3-.2-.31a8.2 8.2 0 1 1 6.87 3.74Zm4.5-6.14c-.25-.12-1.46-.72-1.69-.8-.22-.08-.39-.12-.55.12-.16.25-.63.8-.78.97-.14.16-.29.18-.53.06a6.7 6.7 0 0 1-3.32-2.9c-.25-.43.25-.4.72-1.33.08-.16.04-.3-.02-.43l-.75-1.8c-.2-.48-.4-.41-.55-.42h-.47a.9.9 0 0 0-.65.3 2.7 2.7 0 0 0-.85 2.02 4.7 4.7 0 0 0 1 2.5 10.8 10.8 0 0 0 4.13 3.65c1.54.66 2.14.72 2.9.6.47-.07 1.46-.6 1.66-1.17.2-.58.2-1.07.14-1.17-.06-.1-.22-.16-.47-.28Z"/></svg><span>WhatsApp 01314-624969</span></a>
+        <a class="social" href="https://www.facebook.com/profile.php?id=61580308163889" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M22 12.06A10 10 0 1 0 10.44 22v-7.03H7.9v-2.9h2.54V9.85c0-2.52 1.49-3.9 3.78-3.9 1.1 0 2.24.19 2.24.19v2.47h-1.26c-1.24 0-1.63.78-1.63 1.57v1.88h2.78l-.45 2.9h-2.33V22A10 10 0 0 0 22 12.06Z"/></svg><span>Facebook</span></a>
+        <a class="social" href="mailto:fyndora6@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg><span>fyndora6@gmail.com</span></a>
+      </div>
+      <div>
+        <h3 class="fh" data-i18n="foot.shop">Shop</h3>
+        <a href="#collection" data-i18n="nav.collection">Collection</a>
+        <a href="#details" data-i18n="nav.details">Details</a>
+        <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      </div>
+    </div>
+    <div class="foot__base" data-i18n="foot.base">Cash on delivery across Bangladesh, by Steadfast courier.</div>
+  </div>
+</footer>
+
+<!-- Cart drawer -->
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Cart" aria-hidden="true">
+  <div class="drawer__head">
+    <h2 data-i18n="cart.title">Your cart</h2>
+    <button class="icon-btn" type="button" id="closeCart" aria-label="Close cart">×</button>
+  </div>
+  <div class="drawer__body">
+    <div id="lines"></div>
+    <form class="form" id="orderForm" novalidate>
+      <h3 data-i18n="form.title">Where should it go?</h3>
+      <div class="field" data-f="name">
+        <label for="fName" data-i18n="form.name">Your name</label>
+        <input id="fName" name="name" autocomplete="name" required>
+        <span class="err" data-i18n="err.name">Please write your name.</span>
+      </div>
+      <div class="field" data-f="phone">
+        <label for="fPhone" data-i18n="form.phone">Mobile number</label>
+        <input id="fPhone" name="phone" inputmode="tel" autocomplete="tel" placeholder="01XXXXXXXXX" required>
+        <span class="err" data-i18n="err.phone">Use an 11-digit number starting with 01.</span>
+      </div>
+      <div class="field" data-f="address">
+        <label for="fAddr" data-i18n="form.address">Full address</label>
+        <textarea id="fAddr" name="address" rows="3" autocomplete="street-address" required data-i18n-ph="form.addressPh" placeholder="House, road, area, district"></textarea>
+        <span class="err" data-i18n="err.address">Please write the full address.</span>
+      </div>
+      <div class="field">
+        <span class="label" data-i18n="form.zone">Delivery area</span>
+        <div class="choice">
+          <label><input type="radio" name="zone" value="inside"> <span data-i18n="zone.in">Inside Lakshmipur</span> <span class="amt" data-money="60">৳60</span></label>
+          <label><input type="radio" name="zone" value="outside" checked> <span data-i18n="zone.out">Outside Lakshmipur</span> <span class="amt" data-money="120">৳120</span></label>
+        </div>
+      </div>
+      <div class="field">
+        <label for="fNote" data-i18n="form.note">Note (optional)</label>
+        <textarea id="fNote" name="note" rows="2"></textarea>
+      </div>
+    </form>
+  </div>
+  <div class="totals">
+    <div><span data-i18n="t.sub">Subtotal</span><span id="tSub">৳0</span></div>
+    <div><span data-i18n="t.del">Delivery</span><span id="tDel">৳0</span></div>
+    <div class="grand"><span data-i18n="t.total">Total, cash on delivery</span><span id="tTotal">৳0</span></div>
+    <button class="btn btn--block" type="button" id="placeOrder" data-i18n="t.place">Place order</button>
+    <small data-i18n="t.small">You pay the rider when it arrives.</small>
+  </div>
+</aside>
+
+<!-- Confirm popup -->
+<div class="modal" id="confirm" role="dialog" aria-modal="true" aria-labelledby="cTitle" aria-hidden="true">
+  <h2 id="cTitle" data-i18n="c.title">Before you order</h2>
+  <p data-i18n="c.lead">We want you to love it, so please confirm two things:</p>
+  <ul class="check-list">
+    <li data-i18n="c.1">The candle is small: 6.9 cm wide and 7.7 cm tall.</li>
+    <li data-i18n="c.2">The fragrance is moderate, a soft scent, not a strong one.</li>
+  </ul>
+  <label class="wish"><input type="checkbox" id="agree"> <span data-i18n="c.agree">I know the size and the fragrance, and I am placing this order.</span></label>
+  <div class="modal__actions">
+    <button class="btn btn--ghost" type="button" id="cBack" data-i18n="c.back">Go back</button>
+    <button class="btn" type="button" id="cOk" disabled data-i18n="c.ok">Confirm order</button>
+  </div>
+</div>
+
+<!-- Done popup -->
+<div class="modal" id="done" role="dialog" aria-modal="true" aria-labelledby="dTitle" aria-hidden="true">
+  <h2 id="dTitle" data-i18n="d.title">Thank you, your order is in</h2>
+  <p class="done-id" id="dId"></p>
+  <p data-i18n="d.lead">We will call or message you to confirm before sending. Keep this order number.</p>
+  <p class="wa-note" id="dWaNote" data-i18n="d.waNote">One last step: tap the button below and press Send in WhatsApp, so your order reaches us.</p>
+  <div class="modal__actions">
+    <button class="btn btn--ghost" type="button" id="dOk" data-i18n="d.ok">Done</button>
+    <a class="btn" id="dWa" href="https://wa.me/8801314624969" target="_blank" rel="noopener" data-i18n="d.wa">Send order on WhatsApp</a>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="app.js?v=8"></script>
+</body>
+</html>
