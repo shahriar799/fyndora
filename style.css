@@ -642,3 +642,17 @@ html[lang="bn"] .qo-row h3 { font-size: 17px; }
   .qo-row img { width: 48px; height: 48px; }
   .qo__bar .btn { flex: 1 1 100%; }
 }
+
+/* ---------- v5 copy: return policy layout, softer condition box ---------- */
+.ret__intro { margin-top: 12px; }
+.ret__label { margin-top: 18px; font-weight: 600; }
+.panel .ret__label + ul { margin-top: 8px; }
+.ret__close { margin-top: 18px; color: var(--muted); }
+.condition {
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--rust);
+  background: var(--paper);
+  align-items: start;
+}
+.condition svg { width: 28px; height: 28px; margin-top: 2px; }
+.condition { grid-template-columns: 28px minmax(0, 1fr); }
