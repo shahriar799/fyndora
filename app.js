@@ -5,7 +5,7 @@
   // ---------- Settings (change here) ----------
   var CONFIG = {
     // Google Apps Script web-app URL. Empty = demo mode (order is not sent anywhere).
-    ORDER_ENDPOINT: "",
+    ORDER_ENDPOINT: "https://script.google.com/macros/s/AKfycbwA26p-JsXPnbZ8ZCxpKDOZhkE_6vm9txqMmkUiR2gE71lWU9LdxVomTz597JelQeDMbw/exec",
     PRICE: 540,
     WAS: 590,
     DELIVERY: { inside: 60, outside: 120 },
