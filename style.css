@@ -579,7 +579,8 @@ html[lang="bn"] .faq summary { font-size: clamp(19px, 1.8vw, 23px); }
 
 .owner .owner__id { display: flex; align-items: center; gap: 16px; margin-top: 18px; }
 .owner__photo {
-  width: 72px; height: 72px; flex: none;
+  width: 92px; height: 92px; flex: none;
+  border: 3px solid var(--ivory);
   border-radius: 999px;
   background: var(--ivory);
   color: var(--rust);
