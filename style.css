@@ -26,6 +26,8 @@
   --mask: #000;
   --foot-line: rgba(217, 203, 176, 0.18);
   --foot-bg: #2A1C15;
+  --wa: #25D366;
+  --wa-ink: #FFFFFF;
   --ok: #3F6B3A;
   --warn: #A3401F;
 
@@ -538,3 +540,104 @@ html[lang="bn"] .faq summary { font-size: clamp(19px, 1.8vw, 23px); }
 .btn { white-space: nowrap; }
 .wa-note { padding: 14px 16px; border-radius: var(--r-s); background: var(--paper); border: 1.5px solid var(--rust); color: var(--ink); font-weight: 500; }
 .wa-note[hidden] { display: none; }
+
+/* ---------- v4: centred head, swipe carousel, quick order, owner, WhatsApp float ---------- */
+.head--center { justify-content: center; text-align: center; }
+.btn[hidden], .wa-note[hidden] { display: none; }
+
+.mq-nav { display: flex; align-items: center; justify-content: center; gap: 16px; }
+.mq-nav .marquee__hint { margin: 0; max-width: 46ch; }
+.mq-arrow {
+  display: none;
+  flex: none;
+  width: 48px; height: 48px;
+  border-radius: 999px;
+  border: 1px solid var(--rust);
+  background: var(--ivory);
+  color: var(--rust);
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 0.2s var(--ease), color 0.2s var(--ease);
+}
+.mq-arrow:hover, .mq-arrow:active { background: var(--rust); color: var(--on-rust); }
+.is-swipe-page .mq-arrow { display: inline-grid; place-items: center; }
+
+.marquee.is-swipe {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -webkit-mask-image: none;
+  mask-image: none;
+  padding-bottom: 20px;
+}
+.marquee.is-swipe::-webkit-scrollbar { display: none; }
+.marquee.is-swipe .track { animation: none; padding: 0 var(--gutter); gap: 16px; }
+.marquee.is-swipe .card { scroll-snap-align: center; width: min(78vw, 320px); }
+.marquee.is-swipe .card:hover { transform: none; }
+
+.owner .owner__id { display: flex; align-items: center; gap: 16px; margin-top: 18px; }
+.owner__photo {
+  width: 72px; height: 72px; flex: none;
+  border-radius: 999px;
+  background: var(--ivory);
+  color: var(--rust);
+  display: grid; place-items: center;
+  font-family: var(--font-display);
+  font-size: 34px;
+  font-weight: 600;
+  overflow: hidden;
+}
+.owner__photo img { width: 100%; height: 100%; object-fit: cover; }
+.owner strong { display: block; font-size: 20px; }
+.owner span { opacity: 0.85; font-size: 15px; }
+
+.qo__lead { text-align: center; color: var(--muted); margin: -20px auto 28px; max-width: 46ch; }
+.qo { max-width: 760px; margin: 0 auto; background: var(--ivory); border: 1px solid var(--line-soft); border-radius: var(--r-l); padding: 8px 24px; }
+.qo-row {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr) auto;
+  gap: 16px;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+.qo-row:last-child { border-bottom: 0; }
+.qo-row img { width: 56px; height: 56px; border-radius: var(--r-s); object-fit: cover; }
+.qo-row h3 { font-size: 19px; font-weight: 600; }
+html[lang="bn"] .qo-row h3 { font-size: 17px; }
+.qo-row .qo-price { color: var(--rust); font-weight: 600; font-size: 15px; }
+.qo-row .qo-price s { color: var(--muted); font-weight: 400; margin-left: 6px; }
+.qo-row.has { background: linear-gradient(90deg, transparent, var(--paper) 30%, var(--paper) 70%, transparent); }
+.qo .qty button { width: 42px; height: 42px; font-size: 22px; }
+.qo .qty span { min-width: 28px; font-size: 17px; }
+.qo__bar {
+  max-width: 760px;
+  margin: 20px auto 0;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+}
+.qo__bar #qoSum { font-weight: 600; font-size: 18px; }
+
+.wa-float {
+  position: fixed;
+  z-index: 50;
+  right: 18px;
+  bottom: 18px;
+  width: 58px; height: 58px;
+  border-radius: 999px;
+  background: var(--wa);
+  color: var(--wa-ink);
+  display: grid; place-items: center;
+  box-shadow: 0 14px 30px -12px var(--shadow-deep);
+  transition: transform 0.3s var(--ease);
+}
+.wa-float svg { width: 32px; height: 32px; }
+.wa-float:hover { transform: scale(1.08); }
+@media (max-width: 560px) {
+  .toast { bottom: 90px; }
+  .qo { padding: 4px 14px; }
+  .qo-row { grid-template-columns: 48px minmax(0, 1fr) auto; gap: 12px; }
+  .qo-row img { width: 48px; height: 48px; }
+  .qo__bar .btn { flex: 1 1 100%; }
+}

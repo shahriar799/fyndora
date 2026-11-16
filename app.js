@@ -28,10 +28,11 @@
   var BN = {
     "nav.collection": "কালেকশন", "nav.gift": "গিফট", "nav.details": "বিস্তারিত", "nav.faq": "প্রশ্নোত্তর", "nav.cart": "কার্ট",
     "hero.title": "যে উপহারে যত্নের ছাপ থাকে।",
-    "hero.lead": "হাতে আঁকা টিনে আটটি সয় ওয়াক্স সুগন্ধি, পৌঁছে যাবে প্রিয়জনের দরজায়।",
+    "hero.lead": "নকশা প্রিন্ট করা মেটাল টিনে আটটি সয় ওয়াক্স সুগন্ধি, পৌঁছে যাবে প্রিয়জনের দরজায়।", "nav.quick": "সহজ অর্ডার",
     "hero.each": "প্রতিটি", "hero.cta": "সুগন্ধি বেছে নিন", "hero.wa": "WhatsApp-এ জানুন",
-        "col.title": "আটটি সুগন্ধি, প্রতিটি ৳৫৪০", "combo.badge": "৪টির সেট", "p.comboa": "কম্বো A", "p.combob": "কম্বো B", "n.comboa": "লেমন, টি, জুঁই ও ভ্যানিলা", "n.combob": "লেমন, রোজ, মিন্ট ও ল্যাভেন্ডার",
-    "col.lead": "সারিটি থামাতে ছুঁয়ে দিন বা মাউস রাখুন। যতগুলোই নিন, ডেলিভারি চার্জ পুরো অর্ডারে একবারই।",
+        "col.title": "তাঁর পছন্দের সুগন্ধি বেছে নিন", "combo.badge": "৪টির সেট", "p.comboa": "কম্বো A", "p.combob": "কম্বো B", "n.comboa": "লেমন, টি, জুঁই ও ভ্যানিলা", "n.combob": "লেমন, রোজ, মিন্ট ও ল্যাভেন্ডার",
+    "col.lead": "সারিটি থামাতে মাউস রাখুন। যতগুলোই নিন, ডেলিভারি চার্জ পুরো অর্ডারে একবারই।",
+    "col.leadTouch": "আরও দেখতে আঙুল দিয়ে সরান বা তীরে চাপুন",
     "p.jasmine": "জুঁই (Jasmine)", "p.lavender": "ল্যাভেন্ডার", "p.lemonf": "লেমন, ফ্লোরাল টিন", "p.lemonp": "লেমন, পেইসলি টিন",
     "p.mint": "মিন্ট (পুদিনা)", "p.rose": "রোজ (গোলাপ)", "p.tea": "টি (চা)", "p.vanilla": "ভ্যানিলা",
     "n.jasmine": "নরম সাদা ফুলের ঘ্রাণ, ধীর সন্ধ্যার জন্য",
@@ -45,7 +46,7 @@
     "add": "কার্টে যোগ করুন",
     "gift.title": "উপহার দেওয়ার জন্যই তৈরি",
     "gift.1t": "বক্সে মোড়ানো অবস্থায় পৌঁছায়", "gift.1": "প্রতিটি টিন নিজস্ব প্রিন্টেড বক্সে আসে, হাতে তুলে দিলেই হলো।",
-    "gift.2t": "মোম ফুরালেও টিন থেকে যায়", "gift.2": "রং করা মেটালের কৌটা, আংটি, ক্লিপ বা চকলেট রাখার কাজে লাগে।",
+    "gift.2t": "মোম ফুরালেও টিন থেকে যায়", "gift.2": "নকশা প্রিন্ট করা মেটালের কৌটা, আংটি, ক্লিপ বা চকলেট রাখার কাজে লাগে।",
     "gift.3t": "চারটির সেট, উপহারের জন্য তৈরি", "gift.3": "চারটি সুগন্ধির দুটি কম্বো, উপহারটা যেন হয় আরও উদার।",
     "det.title": "অর্ডারের আগে জেনে নিন",
     "det.lead": "দুটি কথা আমরা সবসময় আগে বলি: ক্যান্ডেলটি ছোট, আর ঘ্রাণ মৃদু। এই সততার কারণেই আজ পর্যন্ত কেউ ফেরত পাঠাননি।",
@@ -60,14 +61,19 @@
     "wish.title": "ডিজিটাল উইশ কার্ড যোগ করুন",
     "wish.lead": "প্রিয়জনের নাম আর আপনার কথা দিয়ে আমরা একটি কার্ড ডিজাইন করে দেব, বিশেষ দিনে পাঠানোর জন্য। এর জন্য সামান্য বাড়তি খরচ; ডিজাইন ও দাম WhatsApp-এ ঠিক করে নেব।",
     "wish.cta": "উইশ কার্ড নিয়ে জানুন",
-    "ret.title": "মত বদলানোর জন্য তিন দিন",
+    "ret.title": "৩ দিনের নো-রিজন রিটার্ন",
+    "own.title": "Fyndora-র পেছনে কে আছেন", "own.name": "শাহরিয়ার", "own.role": "প্রতিষ্ঠাতা, Fyndora, লক্ষ্মীপুর",
+    "own.text": "আমি শাহরিয়ার, লক্ষ্মীপুর থেকে Fyndora চালাই। আমরা যে ক্যান্ডেল বিক্রি করি তার প্রতিটি আমি নিজে বাছাই করি, আর পাঠানোর আগে প্রতিটি পার্সেল চেক করি। কোনো সমস্যা হলে সরাসরি আমাকে মেসেজ করতে পারেন।",
+    "own.cta": "WhatsApp-এ আমাকে মেসেজ করুন",
+    "qo.title": "সহজ অর্ডার", "qo.lead": "যে ক্যান্ডেল চান তার পাশে + চাপুন। শেষ হলে \"অর্ডার করতে যান\" চাপুন।", "qo.go": "অর্ডার করতে যান",
+    "qo.items": "টি পণ্য", "qo.none": "এখনো কিছু বাছাই করা হয়নি", "qo.plus": "ডেলিভারি চার্জ আলাদা",
     "ret.1": "হাতে পাওয়ার ৩ দিনের মধ্যে ফেরত দিতে পারবেন, কোনো কারণ বলতে হবে না।",
     "ret.2": "আপনার ঠিকানা থেকেই আমরা পিকআপের ব্যবস্থা করব।",
     "ret.3": "রিটার্ন ডেলিভারি চার্জ কেটে বাকি টাকা ফেরত দেওয়া হবে।",
     "cond.t": "প্রতিটি রিটার্নের শর্ত", "cond": "ক্যান্ডেলটি জ্বালানো বা ব্যবহার করা যাবে না, আবার বিক্রি করার মতো অবস্থায় থাকতে হবে। জ্বালানো বা ব্যবহৃত ক্যান্ডেল ফেরত নেওয়া হবে না।",
     "ret.4": "রাইডারের সামনেই চেক করে নিতে পারেন; পছন্দ না হলে শুধু ডেলিভারি চার্জ দিয়ে ফেরত দিন।",
     "faq.title": "যে প্রশ্নগুলো সবচেয়ে বেশি আসে",
-    "q1": "টিনটা কিসের তৈরি?", "a1": "মেটালের। ঢাকনাসহ রং করা টিনের কৌটা, ক্যান্ডেল শেষ হলেও কাজে লাগে।",
+    "q1": "টিনটা কিসের তৈরি?", "a1": "মেটালের। ঢাকনাসহ নকশা প্রিন্ট করা টিনের কৌটা, ক্যান্ডেল শেষ হলেও কাজে লাগে।",
     "q2": "কত ঘণ্টা জ্বলবে?", "a2": "কমপক্ষে ১৬ ঘণ্টা। প্রথমবার জ্বালানোর সময় উপরের মোম কিনারা পর্যন্ত গলতে দিন, তাহলে মাঝখানে গর্ত (tunneling) হবে না।",
     "q3": "সাইজ ও ওজন কত?", "a3": "ক্যান্ডেল ৬.৯ সেমি চওড়া, ৭.৭ সেমি উঁচু; বক্স ৭.২ × ৮ সেমি। ভেতরে ১১৩ গ্রাম সয় ওয়াক্স, বক্সসহ ওজন ১৫০ গ্রাম। এটি ছোট ক্যান্ডেল, বেডসাইড, টেবিল বা উপহারের জন্য উপযুক্ত।",
     "q4": "ঘ্রাণ কতটা তীব্র?", "a4": "মাঝারি (moderate)। ছোট ঘরে মৃদু সুবাস দেয়, বড় হলরুম ভরিয়ে দেয় না। খুব কড়া ঘ্রাণ চাইলে এটি আপনার জন্য নাও হতে পারে।",
@@ -91,8 +97,8 @@
     "c.2": "ঘ্রাণ মাঝারি (moderate), মৃদু সুবাস, কড়া নয়।",
     "c.agree": "আমি সাইজ ও ঘ্রাণের বিষয়টি জেনেই অর্ডার করছি।",
     "c.back": "ফিরে যান", "c.ok": "অর্ডার নিশ্চিত করুন",
-    "d.title": "ধন্যবাদ, আপনার অর্ডার পেয়েছি",
-    "d.lead": "পাঠানোর আগে আমরা কল বা মেসেজ করে নিশ্চিত হব। অর্ডার নম্বরটি রেখে দিন।",
+    "d.title": "ধন্যবাদ! আপনার অর্ডারটি গ্রহণ করা হয়েছে।",
+    "d.lead": "Fyndora-র একজন প্রতিনিধি শীঘ্রই আপনাকে কল করে অর্ডারটি নিশ্চিত করবেন। অর্ডার নম্বরটি রেখে দিন।",
     "d.ok": "ঠিক আছে",
     "d.wa": "WhatsApp-এ অর্ডার পাঠান",
     "d.waNote": "শেষ ধাপ: নিচের বাটনে চাপুন, তারপর WhatsApp-এ Send চাপুন। তাহলেই অর্ডারটি আমাদের কাছে পৌঁছাবে।",
@@ -105,7 +111,9 @@
     "msg.added": "Added to cart", "msg.addedBtn": "Added", "msg.empty": "Your cart is empty. Pick a scent to begin.",
     "msg.emptyToast": "Add a candle to your cart first", "msg.fix": "Please fix the fields marked in red",
     "msg.fail": "The order could not be sent. Try again or message us on WhatsApp.", "msg.demo": "Demo: this order was not sent anywhere",
-    "msg.remove": "Remove", "msg.each": "each"
+    "msg.remove": "Remove", "msg.each": "each",
+    "col.leadTouch": "Swipe or tap the arrows to see more",
+    "qo.items": "items", "qo.none": "Nothing chosen yet", "qo.plus": "plus delivery"
   };
 
   var doc = document.documentElement;
@@ -152,19 +160,38 @@
 
   // ---------- Marquee: clone once for a seamless loop ----------
   var track = $("#track"), marquee = $("#marquee");
-  $$(".card", track).forEach(function (c) {
-    var k = c.cloneNode(true);
-    k.setAttribute("aria-hidden", "true");
-    $$("button", k).forEach(function (b) { b.tabIndex = -1; });
-    track.appendChild(k);
-  });
-  var resume;
-  marquee.addEventListener("touchstart", function () {
-    marquee.classList.add("is-paused"); clearTimeout(resume);
-  }, { passive: true });
-  marquee.addEventListener("touchend", function () {
-    clearTimeout(resume); resume = setTimeout(function () { marquee.classList.remove("is-paused"); }, 3500);
-  });
+  var swipeMode = window.matchMedia("(hover: none), (max-width: 900px)").matches;
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!swipeMode) {
+    $$(".card", track).forEach(function (c) {
+      var k = c.cloneNode(true);
+      k.setAttribute("aria-hidden", "true");
+      $$("button", k).forEach(function (b) { b.tabIndex = -1; });
+      track.appendChild(k);
+    });
+  } else {
+    // Phones: a real swipeable row that also moves on its own until the visitor touches it.
+    marquee.classList.add("is-swipe");
+    doc.classList.add("is-swipe-page");
+    $("#mqHint").setAttribute("data-i18n", "col.leadTouch");
+    var autoTimer, idleTimer;
+    var step = function (dir) {
+      var c = $(".card", track); if (!c) return;
+      var w = c.getBoundingClientRect().width + 16;
+      var max = marquee.scrollWidth - marquee.clientWidth;
+      var x = marquee.scrollLeft + dir * w;
+      if (dir > 0 && marquee.scrollLeft >= max - 4) x = 0;
+      if (dir < 0 && marquee.scrollLeft <= 4) x = max;
+      marquee.scrollTo({ left: x, behavior: reduceMotion ? "auto" : "smooth" });
+    };
+    var play = function () { clearInterval(autoTimer); if (!reduceMotion) autoTimer = setInterval(function () { step(1); }, 3000); };
+    var hold = function () { clearInterval(autoTimer); clearTimeout(idleTimer); idleTimer = setTimeout(play, 6000); };
+    marquee.addEventListener("touchstart", hold, { passive: true });
+    marquee.addEventListener("pointerdown", hold);
+    $("#mqPrev").addEventListener("click", function () { hold(); step(-1); });
+    $("#mqNext").addEventListener("click", function () { hold(); step(1); });
+    play();
+  }
 
   // ---------- Hero tilt ----------
   var tilt = $("#tilt");
@@ -199,6 +226,44 @@
     return { n: n, sub: sub, del: del, total: sub + del };
   }
   function save() { store.set("fy.cart", cart); }
+
+  var QO_ORDER = ["jasmine", "lavender", "lemon-floral", "lemon-paisley", "mint", "rose", "tea", "vanilla", "combo-a", "combo-b"];
+  var WAS = { "combo-a": 2360, "combo-b": 2360 };
+  var qoBox = $("#qo");
+  QO_ORDER.forEach(function (id) {
+    var row = document.createElement("div");
+    row.className = "qo-row"; row.setAttribute("data-id", id);
+    row.innerHTML = '<img alt="" width="56" height="56" loading="lazy"><div><h3></h3><span class="qo-price"><span class="now"></span><s></s></span></div>' +
+      '<div class="qty"><button type="button" data-d="-1">−</button><span>0</span><button type="button" data-d="1">+</button></div>';
+    $("img", row).src = PRODUCTS[id].img;
+    $$("button", row).forEach(function (b) {
+      b.addEventListener("click", function () {
+        cart[id] = Math.max(0, (cart[id] || 0) + Number(b.getAttribute("data-d")));
+        if (!cart[id]) delete cart[id];
+        save(); render();
+        if (b.getAttribute("data-d") === "1") { var cb = $("#openCart"); cb.classList.remove("bump"); void cb.offsetWidth; cb.classList.add("bump"); }
+      });
+    });
+    qoBox.appendChild(row);
+  });
+  $("#qoGo").addEventListener("click", function () {
+    if (!count()) { toast(t("msg.emptyToast")); return; }
+    openDrawer();
+  });
+  function renderQO() {
+    $$(".qo-row", qoBox).forEach(function (row) {
+      var id = row.getAttribute("data-id"), n = cart[id] || 0;
+      $("h3", row).textContent = PRODUCTS[id][lang];
+      $(".now", row).textContent = money(priceOf(id));
+      $("s", row).textContent = money(WAS[id] || CONFIG.WAS);
+      $(".qty span", row).textContent = digits(n);
+      $('[data-d="-1"]', row).setAttribute("aria-label", "−1 " + PRODUCTS[id].en);
+      $('[data-d="1"]', row).setAttribute("aria-label", "+1 " + PRODUCTS[id].en);
+      row.classList.toggle("has", n > 0);
+    });
+    var s = sums();
+    $("#qoSum").textContent = s.n ? digits(s.n) + " " + t("qo.items") + ", " + money(s.sub) + " (" + t("qo.plus") + ")" : t("qo.none");
+  }
 
   function render() {
     var lines = $("#lines");
@@ -239,6 +304,7 @@
     $("#tDel").textContent = money(s.del);
     $("#tTotal").textContent = money(s.total);
     $("#orderForm").style.display = s.n ? "" : "none";
+    renderQO();
   }
 
   track.addEventListener("click", function (e) {
@@ -343,7 +409,9 @@
       drawer.classList.remove("open"); drawer.setAttribute("aria-hidden", "true");
       $("#dId").textContent = order.id;
       $("#dWa").href = "https://wa.me/" + CONFIG.WHATSAPP + "?text=" + encodeURIComponent(wa);
+      // Without a Sheet connection the only way the order reaches us is the customer's WhatsApp message.
       $("#dWaNote").hidden = r !== "demo";
+      $("#dWa").hidden = r !== "demo";
       openModal(doneM);
     }).catch(function () { toast(t("msg.fail")); btn.disabled = false; });
   });

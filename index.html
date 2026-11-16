@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fyndora Scented Candles</title>
-<meta name="description" content="Eight soy-wax scented candles in hand-painted metal tins. A gift that feels thought‑of. Cash on delivery across Bangladesh.">
+<meta name="description" content="Eight soy-wax scented candles in printed metal tins. A gift that feels thought‑of. Cash on delivery across Bangladesh.">
 <meta property="og:title" content="Fyndora: scented candles made for gifting">
-<meta property="og:description" content="Eight scents in hand-painted metal tins, ৳540 each. Cash on delivery.">
+<meta property="og:description" content="Eight scents in printed metal tins, ৳540 each. Cash on delivery.">
 <meta property="og:image" content="https://shahriar799.github.io/fyndora/assets/img/og.jpg">
 <meta property="og:url" content="https://shahriar799.github.io/fyndora/">
 <meta property="og:type" content="website">
@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Lora:wght@500;600;700&family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=8">
+<link rel="stylesheet" href="style.css?v=9">
 </head>
 <body>
 
@@ -29,6 +29,7 @@
       <a href="#collection" data-i18n="nav.collection">Collection</a>
       <a href="#gift" data-i18n="nav.gift">Gifting</a>
       <a href="#details" data-i18n="nav.details">Details</a>
+      <a href="#quick" data-i18n="nav.quick">Quick order</a>
       <a href="#faq" data-i18n="nav.faq">FAQ</a>
     </nav>
     <div class="lang" role="group" aria-label="Language">
@@ -49,7 +50,7 @@
     <div class="wrap hero__grid">
       <div>
         <h1 class="kinetic" data-i18n="hero.title">A gift that feels thought‑of.</h1>
-        <p class="hero__lead" data-i18n="hero.lead">Eight soy-wax scents in hand-painted tins, delivered to their door.</p>
+        <p class="hero__lead" data-i18n="hero.lead">Eight soy-wax scents in paisley-print metal tins, delivered to their door.</p>
         <div class="price">
           <span class="price__now" data-money="540">৳540</span>
           <span class="price__was" data-money="590">৳590</span>
@@ -71,8 +72,8 @@
   </section>
 
   <section class="section section--paper" id="collection">
-    <div class="wrap head reveal">
-      <h2 data-i18n="col.title">Eight scents, ৳540 each</h2>
+    <div class="wrap head head--center reveal">
+      <h2 data-i18n="col.title">Find their scent</h2>
     </div>
     <div class="marquee" id="marquee" aria-label="Candle collection">
       <div class="track" id="track">
@@ -129,7 +130,11 @@
         </article>
       </div>
     </div>
-    <p class="marquee__hint wrap" data-i18n="col.lead">Touch or hover over the line to pause it. Delivery is charged once per order, however many you add.</p>
+    <div class="mq-nav wrap">
+      <button class="mq-arrow" type="button" id="mqPrev" aria-label="Previous candle"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button>
+      <p class="marquee__hint" id="mqHint" data-i18n="col.lead">Hover over the line to pause it. Delivery is charged once per order, however many you add.</p>
+      <button class="mq-arrow" type="button" id="mqNext" aria-label="Next candle"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
+    </div>
   </section>
 
   <section class="section" id="gift">
@@ -139,7 +144,7 @@
         <h2 data-i18n="gift.title">Made to be given</h2>
         <ul class="gift__list">
           <li><span class="n" data-num="1">1</span><div><strong data-i18n="gift.1t">It arrives already boxed</strong><span data-i18n="gift.1">Every tin comes in its own printed box, ready to hand over.</span></div></li>
-          <li><span class="n" data-num="2">2</span><div><strong data-i18n="gift.2t">The tin stays after the wax</strong><span data-i18n="gift.2">A painted metal jar they keep for rings, pins or sweets.</span></div></li>
+          <li><span class="n" data-num="2">2</span><div><strong data-i18n="gift.2t">The tin stays after the wax</strong><span data-i18n="gift.2">A printed metal jar they keep for rings, pins or sweets.</span></div></li>
           <li><span class="n" data-num="3">3</span><div><strong data-i18n="gift.3t">A set of four, ready to give</strong><span data-i18n="gift.3">Two combos of four scents each, for a gift that feels generous.</span></div></li>
         </ul>
       </div>
@@ -170,11 +175,11 @@
     </div>
   </section>
 
-  <section class="section">
-    <div class="wrap">
-      <div class="panel panel--wide reveal">
+  <section class="section" id="trust">
+    <div class="wrap duo">
+      <div class="panel reveal">
         <div>
-        <h3 data-i18n="ret.title">Three days to change your mind</h3>
+        <h3 data-i18n="ret.title">3-Day No-Reason Return</h3>
         <ul>
           <li data-i18n="ret.1">Return within 3 days of receiving it, no reason needed.</li>
           <li data-i18n="ret.2">We arrange pickup from your address.</li>
@@ -187,14 +192,37 @@
           <div><strong data-i18n="cond.t">Condition for every return</strong><span data-i18n="cond">The candle must be unburned and unused, in resellable condition. A lit or used candle cannot be returned.</span></div>
         </div>
       </div>
+      <aside class="panel panel--rust owner reveal" aria-labelledby="ownT">
+        <h3 id="ownT" data-i18n="own.title">Who is behind Fyndora</h3>
+        <div class="owner__id">
+          <div class="owner__photo" aria-hidden="true">S</div>
+          <div><strong data-i18n="own.name">Shahriar</strong><span data-i18n="own.role">Founder of Fyndora, Lakshmipur</span></div>
+        </div>
+        <p data-i18n="own.text">I'm Shahriar, and I run Fyndora from Lakshmipur. I pick every candle we sell and check each parcel before it goes out. If anything is not right, you can message me directly.</p>
+        <a class="btn" href="https://wa.me/8801314624969" target="_blank" rel="noopener" data-i18n="own.cta">Message me on WhatsApp</a>
+      </aside>
     </div>
   </section>
 
-  <section class="section section--paper" id="faq">
+  <section class="section section--paper" id="quick">
+    <div class="wrap">
+      <div class="head head--center reveal">
+        <h2 data-i18n="qo.title">Quick order</h2>
+      </div>
+      <p class="qo__lead" data-i18n="qo.lead">Press + for each candle you want. When you are done, press Checkout.</p>
+      <div class="qo" id="qo"></div>
+      <div class="qo__bar">
+        <span id="qoSum"></span>
+        <button class="btn" type="button" id="qoGo" data-i18n="qo.go">Checkout</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
     <div class="wrap">
       <div class="head reveal"><h2 data-i18n="faq.title">Questions we hear most</h2></div>
       <div class="faq reveal">
-        <details><summary data-i18n="q1">What is the tin made of?</summary><p data-i18n="a1">Metal. It is a painted tin jar with a lid, so it stays useful after the candle is finished.</p></details>
+        <details><summary data-i18n="q1">What is the tin made of?</summary><p data-i18n="a1">Metal. It is a printed tin jar with a lid, so it stays useful after the candle is finished.</p></details>
         <details><summary data-i18n="q2">How long does it burn?</summary><p data-i18n="a2">At least 16 hours. Let the top melt evenly to the edge on the first burn so the candle does not tunnel.</p></details>
         <details><summary data-i18n="q3">How big is it, and how heavy?</summary><p data-i18n="a3">The candle is 6.9 cm wide and 7.7 cm tall; the box is 7.2 × 8 cm. It holds 113 g of soy wax and weighs 150 g with the box. It is a small candle, best for a bedside, desk or a gift.</p></details>
         <details><summary data-i18n="q4">How strong is the fragrance?</summary><p data-i18n="a4">Moderate. It gives a soft scent to a small room rather than filling a large hall. If you want a strong scent, this may not be the one for you.</p></details>
@@ -223,6 +251,7 @@
         <h3 class="fh" data-i18n="foot.shop">Shop</h3>
         <a href="#collection" data-i18n="nav.collection">Collection</a>
         <a href="#details" data-i18n="nav.details">Details</a>
+        <a href="#quick" data-i18n="nav.quick">Quick order</a>
         <a href="#faq" data-i18n="nav.faq">FAQ</a>
       </div>
     </div>
@@ -295,18 +324,20 @@
 
 <!-- Done popup -->
 <div class="modal" id="done" role="dialog" aria-modal="true" aria-labelledby="dTitle" aria-hidden="true">
-  <h2 id="dTitle" data-i18n="d.title">Thank you, your order is in</h2>
+  <h2 id="dTitle" data-i18n="d.title">Thank you! Your order has been placed.</h2>
   <p class="done-id" id="dId"></p>
-  <p data-i18n="d.lead">We will call or message you to confirm before sending. Keep this order number.</p>
-  <p class="wa-note" id="dWaNote" data-i18n="d.waNote">One last step: tap the button below and press Send in WhatsApp, so your order reaches us.</p>
+  <p data-i18n="d.lead">A Fyndora representative will call you shortly to confirm it. Please keep this order number.</p>
+  <p class="wa-note" id="dWaNote" hidden data-i18n="d.waNote">One last step: tap the button below and press Send in WhatsApp, so your order reaches us.</p>
   <div class="modal__actions">
     <button class="btn btn--ghost" type="button" id="dOk" data-i18n="d.ok">Done</button>
-    <a class="btn" id="dWa" href="https://wa.me/8801314624969" target="_blank" rel="noopener" data-i18n="d.wa">Send order on WhatsApp</a>
+    <a class="btn" id="dWa" hidden href="https://wa.me/8801314624969" target="_blank" rel="noopener" data-i18n="d.wa">Send order on WhatsApp</a>
   </div>
 </div>
 
+<a class="wa-float" href="https://wa.me/8801314624969" target="_blank" rel="noopener" aria-label="Chat with Fyndora on WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 14.98L2 22l5.17-1.5A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.07.9.9-3-.2-.31a8.2 8.2 0 1 1 6.87 3.74Zm4.5-6.14c-.25-.12-1.46-.72-1.69-.8-.22-.08-.39-.12-.55.12-.16.25-.63.8-.78.97-.14.16-.29.18-.53.06a6.7 6.7 0 0 1-3.32-2.9c-.25-.43.25-.4.72-1.33.08-.16.04-.3-.02-.43l-.75-1.8c-.2-.48-.4-.41-.55-.42h-.47a.9.9 0 0 0-.65.3 2.7 2.7 0 0 0-.85 2.02 4.7 4.7 0 0 0 1 2.5 10.8 10.8 0 0 0 4.13 3.65c1.54.66 2.14.72 2.9.6.47-.07 1.46-.6 1.66-1.17.2-.58.2-1.07.14-1.17-.06-.1-.22-.16-.47-.28Z"/></svg></a>
+
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="app.js?v=8"></script>
+<script src="app.js?v=9"></script>
 </body>
 </html>
