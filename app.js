@@ -65,6 +65,8 @@
     "own.title": "Fyndora-র পেছনে কে আছেন", "own.name": "শাহরিয়ার", "own.role": "প্রতিষ্ঠাতা, Fyndora, লক্ষ্মীপুর",
     "own.text": "আমি শাহরিয়ার, লক্ষ্মীপুর থেকে Fyndora চালাই। আমরা যে ক্যান্ডেল বিক্রি করি তার প্রতিটি আমি নিজে বাছাই করি, আর পাঠানোর আগে প্রতিটি পার্সেল চেক করি। কোনো সমস্যা হলে সরাসরি আমাকে মেসেজ করতে পারেন।",
     "own.cta": "WhatsApp-এ আমাকে মেসেজ করুন",
+    "rev.title": "ক্লায়েন্টদের রিভিউ", "rev.lead": "Messenger ও WhatsApp-এ আমাদের কাস্টমারদের আসল মেসেজ। গোপনীয়তার জন্য নাম লুকানো হয়েছে।",
+    "rev.hint": "সারি থামাতে মাউস রাখুন। পুরোটা পড়তে যেকোনো স্ক্রিনশটে ক্লিক করুন।", "rev.hintTouch": "আঙুল দিয়ে সরান বা তীরে চাপুন। পুরোটা পড়তে স্ক্রিনশটে চাপুন।",
     "qo.title": "সহজ অর্ডার", "qo.lead": "যে ক্যান্ডেল চান তার পাশে + চাপুন। শেষ হলে \"অর্ডার করতে যান\" চাপুন।", "qo.go": "অর্ডার করতে যান",
     "qo.items": "টি পণ্য", "qo.none": "এখনো কিছু বাছাই করা হয়নি", "qo.plus": "ডেলিভারি চার্জ আলাদা",
     "ret.intro": "মত বদলেছেন? কোনো সমস্যা নেই। অর্ডার হাতে পাওয়ার ৩ দিনের মধ্যে কোনো কারণ না জানিয়েই রিটার্নের অনুরোধ করতে পারবেন।",
@@ -116,6 +118,7 @@
     "msg.fail": "The order could not be sent. Try again or message us on WhatsApp.", "msg.demo": "Demo: this order was not sent anywhere",
     "msg.remove": "Remove", "msg.each": "each",
     "col.leadTouch": "Swipe or tap the arrows to see more",
+    "rev.hintTouch": "Swipe or tap the arrows. Tap a screenshot to read it in full.",
     "qo.items": "items", "qo.none": "Nothing chosen yet", "qo.plus": "plus delivery"
   };
 
@@ -194,6 +197,47 @@
     $("#mqPrev").addEventListener("click", function () { hold(); step(-1); });
     $("#mqNext").addEventListener("click", function () { hold(); step(1); });
     play();
+  }
+
+  // ---------- Client reviews: real screenshots, drifting left to right ----------
+  var revTrack = $("#revTrack"), revM = $("#revMarquee");
+  if (revTrack) {
+    if (!swipeMode) {
+      $$(".rev-card", revTrack).forEach(function (c) {
+        var k = c.cloneNode(true);
+        k.setAttribute("aria-hidden", "true"); k.tabIndex = -1;
+        revTrack.appendChild(k);
+      });
+    } else {
+      revM.classList.add("is-swipe");
+      $("#revHint").setAttribute("data-i18n", "rev.hintTouch");
+      var rAuto, rIdle;
+      var rStep = function (dir) {
+        var c = $(".rev-card", revTrack); if (!c) return;
+        var w = c.getBoundingClientRect().width + 14;
+        var max = revM.scrollWidth - revM.clientWidth;
+        var x = revM.scrollLeft + dir * w;
+        if (dir > 0 && revM.scrollLeft >= max - 4) x = 0;
+        if (dir < 0 && revM.scrollLeft <= 4) x = max;
+        revM.scrollTo({ left: x, behavior: reduceMotion ? "auto" : "smooth" });
+      };
+      var rPlay = function () { clearInterval(rAuto); if (!reduceMotion) rAuto = setInterval(function () { rStep(1); }, 3500); };
+      var rHold = function () { clearInterval(rAuto); clearTimeout(rIdle); rIdle = setTimeout(rPlay, 6000); };
+      revM.addEventListener("touchstart", rHold, { passive: true });
+      revM.addEventListener("pointerdown", rHold);
+      $("#revPrev").addEventListener("click", function () { rHold(); rStep(-1); });
+      $("#revNext").addEventListener("click", function () { rHold(); rStep(1); });
+      rPlay();
+    }
+    var lb = $("#lightbox"), lbImg = $("#lbImg"), lbBack;
+    var lbClose = function () { lb.hidden = true; lbImg.removeAttribute("src"); if (lbBack) lbBack.focus(); };
+    revTrack.addEventListener("click", function (e) {
+      var c = e.target.closest(".rev-card"); if (!c) return;
+      lbBack = c; lbImg.src = c.getAttribute("data-full"); lb.hidden = false; $("#lbClose").focus();
+    });
+    $("#lbClose").addEventListener("click", lbClose);
+    lb.addEventListener("click", function (e) { if (e.target === lb) lbClose(); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !lb.hidden) lbClose(); });
   }
 
   // ---------- Hero tilt ----------
