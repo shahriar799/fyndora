@@ -110,13 +110,15 @@
     "msg.added": "কার্টে যোগ হয়েছে", "msg.addedBtn": "যোগ হয়েছে", "msg.empty": "কার্ট খালি। একটি সুগন্ধি বেছে নিন।",
     "msg.emptyToast": "আগে কার্টে একটি ক্যান্ডেল যোগ করুন", "msg.fix": "লাল চিহ্নিত ঘরগুলো ঠিক করুন",
     "msg.fail": "অর্ডার পাঠানো যায়নি। আবার চেষ্টা করুন বা WhatsApp করুন।", "msg.demo": "ডেমো: অর্ডার কোথাও পাঠানো হয়নি",
-    "msg.remove": "সরান", "msg.each": "প্রতিটি"
+    "msg.remove": "সরান", "msg.each": "প্রতিটি",
+    "stock.sold": "স্টক শেষ", "stock.left": "মাত্র {n}টি বাকি", "stock.max": "স্টকে মাত্র {n}টি আছে", "stock.changed": "কিছু পণ্যের স্টক কম, তাই কার্ট ঠিক করে দেওয়া হয়েছে।"
   };
   var EN_EXTRA = {
     "msg.added": "Added to cart", "msg.addedBtn": "Added", "msg.empty": "Your cart is empty. Pick a scent to begin.",
     "msg.emptyToast": "Add a candle to your cart first", "msg.fix": "Please fix the fields marked in red",
     "msg.fail": "The order could not be sent. Try again or message us on WhatsApp.", "msg.demo": "Demo: this order was not sent anywhere",
     "msg.remove": "Remove", "msg.each": "each",
+    "stock.sold": "Sold out", "stock.left": "Only {n} left", "stock.max": "Only {n} in stock", "stock.changed": "Some items have less stock now, so your cart was updated.",
     "col.leadTouch": "Swipe or tap the arrows to see more",
     "rev.hintTouch": "Swipe or tap the arrows. Tap a screenshot to read it in full.",
     "qo.items": "items", "qo.none": "Nothing chosen yet", "qo.plus": "plus delivery"
@@ -274,6 +276,58 @@
   }
   function save() { store.set("fy.cart", cart); }
 
+  // ---------- Stock (read from the Google Sheet "Stock" tab) ----------
+  var STOCK = {}; // id -> number, or missing when the Sheet does not track it
+  function stockOf(id) { return typeof STOCK[id] === "number" ? STOCK[id] : Infinity; }
+  function canAdd(id) {
+    if ((cart[id] || 0) < stockOf(id)) return true;
+    var n = stockOf(id);
+    toast(n > 0 ? t("stock.max").replace("{n}", digits(n)) : PRODUCTS[id][lang] + ": " + t("stock.sold"));
+    return false;
+  }
+  function clampCart() {
+    var changed = false;
+    Object.keys(cart).forEach(function (k) {
+      if (cart[k] > stockOf(k)) { cart[k] = stockOf(k); changed = true; if (!cart[k]) delete cart[k]; }
+    });
+    if (changed) save();
+    return changed;
+  }
+  function applyStock() {
+    $$(".card[data-id]").forEach(function (card) {
+      var id = card.getAttribute("data-id"), n = stockOf(id), sold = n <= 0;
+      card.classList.toggle("is-sold", sold);
+      var b = $(".add", card); b.disabled = sold; if (sold) b.textContent = t("stock.sold");
+      var tag = $(".stock-tag", card);
+      if (!tag) { tag = document.createElement("span"); tag.className = "stock-tag"; $(".card__img", card).appendChild(tag); }
+      var txt = sold ? t("stock.sold") : (n <= 3 ? t("stock.left").replace("{n}", digits(n)) : "");
+      tag.textContent = txt; tag.hidden = !txt;
+    });
+    $$(".qo-row").forEach(function (row) {
+      var id = row.getAttribute("data-id"), n = stockOf(id);
+      $('[data-d="1"]', row).disabled = (cart[id] || 0) >= n;
+      var tag = $(".qo-stock", row);
+      if (!tag) { tag = document.createElement("span"); tag.className = "qo-stock"; $(".qo-price", row).appendChild(tag); }
+      var txt = n <= 0 ? t("stock.sold") : (n <= 3 ? t("stock.left").replace("{n}", digits(n)) : "");
+      tag.textContent = txt; tag.hidden = !txt;
+      row.classList.toggle("is-sold", n <= 0);
+    });
+  }
+  function loadStock() {
+    if (!CONFIG.ORDER_ENDPOINT) return;
+    fetch(CONFIG.ORDER_ENDPOINT + "?action=stock").then(function (r) { return r.json(); }).then(function (d) {
+      if (!d || !d.stock) return;
+      var byName = {};
+      Object.keys(PRODUCTS).forEach(function (id) { byName[PRODUCTS[id].en] = id; });
+      STOCK = {};
+      Object.keys(d.stock).forEach(function (name) {
+        var id = byName[name], v = d.stock[name];
+        if (id && typeof v === "number") STOCK[id] = v;
+      });
+      clampCart(); render();
+    }).catch(function () { /* stock unknown: everything stays available */ });
+  }
+
   var QO_ORDER = ["jasmine", "lavender", "lemon-floral", "lemon-paisley", "mint", "rose", "tea", "vanilla", "combo-a", "combo-b"];
   var WAS = { "combo-a": 2360, "combo-b": 2360 };
   var qoBox = $("#qo");
@@ -285,6 +339,7 @@
     $("img", row).src = PRODUCTS[id].img;
     $$("button", row).forEach(function (b) {
       b.addEventListener("click", function () {
+        if (b.getAttribute("data-d") === "1" && !canAdd(id)) return;
         cart[id] = Math.max(0, (cart[id] || 0) + Number(b.getAttribute("data-d")));
         if (!cart[id]) delete cart[id];
         save(); render();
@@ -337,6 +392,7 @@
         $("span", row).textContent = digits(cart[id]);
         $$("button", row).forEach(function (b) {
           b.addEventListener("click", function () {
+            if (b.getAttribute("data-d") === "1" && !canAdd(id)) return;
             cart[id] += Number(b.getAttribute("data-d"));
             if (cart[id] <= 0) delete cart[id];
             save(); render();
@@ -352,11 +408,13 @@
     $("#tTotal").textContent = money(s.total);
     $("#orderForm").style.display = s.n ? "" : "none";
     renderQO();
+    applyStock();
   }
 
   track.addEventListener("click", function (e) {
     var b = e.target.closest(".add"); if (!b) return;
     var id = b.closest(".card").getAttribute("data-id");
+    if (!canAdd(id)) return;
     cart[id] = (cart[id] || 0) + 1; save(); render();
     var cb = $("#openCart"); cb.classList.remove("bump"); void cb.offsetWidth; cb.classList.add("bump");
     $$('.card[data-id="' + id + '"] .add').forEach(function (x) {
@@ -414,6 +472,7 @@
   });
 
   $("#placeOrder").addEventListener("click", function () {
+    if (clampCart()) { render(); toast(t("stock.changed")); }
     if (!count()) { toast(t("msg.emptyToast")); return; }
     if (!check()) { toast(t("msg.fix")); var b = $(".field.bad input, .field.bad textarea"); if (b) b.focus(); return; }
     $("#agree").checked = false; $("#cOk").disabled = true;
@@ -465,4 +524,5 @@
   $("#dOk").addEventListener("click", closeAll);
 
   applyLang();
+  loadStock();
 })();

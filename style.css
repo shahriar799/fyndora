@@ -693,3 +693,18 @@ html[lang="bn"] .qo-row h3 { font-size: 17px; }
 .lightbox[hidden] { display: none; }
 .lightbox img { max-width: min(92vw, 520px); max-height: calc(100vh - 80px); width: auto; height: auto; border-radius: var(--r-m); }
 .lightbox__close { position: absolute; top: 12px; right: 12px; background: var(--ivory); }
+
+/* ---------- v7: stock ---------- */
+.stock-tag {
+  position: absolute; z-index: 1; top: 14px; right: 14px;
+  padding: 4px 12px; border-radius: 999px;
+  background: var(--ivory); color: var(--rust);
+  border: 1px solid var(--line);
+  font-size: 13px; font-weight: 600;
+}
+.stock-tag[hidden], .qo-stock[hidden] { display: none; }
+.card.is-sold .card__img img { opacity: 0.45; filter: grayscale(0.6); }
+.card.is-sold .stock-tag { background: var(--ink); color: var(--bone); border-color: var(--ink); }
+.qo-stock { margin-left: 8px; color: var(--warn); font-size: 13px; font-weight: 600; }
+.qo-row.is-sold img { opacity: 0.45; }
+.qty button[disabled] { opacity: 0.35; cursor: not-allowed; }
